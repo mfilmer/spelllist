@@ -107,3 +107,6 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+
+# generated pdf of final document
+example.pdf
