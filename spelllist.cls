@@ -68,14 +68,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % These draw commands assume you are already in a tikzpicture
 \newcommand\@drawverbal{
-  \tikz{
+  \tikz[scale=0.7]{
     \draw [very thick] (0,0) ++(-30:0.1) arc (-30:30:0.1);
     \draw [very thick] (0,0) ++(-30:0.2) arc (-30:30:0.2);
     \draw [very thick] (0,0) ++(-30:0.3) arc (-30:30:0.3);
   } 
 }
-\newcommand\@drawsomatic{}
-\newcommand\@drawdivinefocus{}
+\newcommand\@drawsomatic{
+  \tikz[scale=0.5]{
+    \draw [thick] (0,0)
+          -- (0,0.2) arc (180:0:0.025) -- (0.05,0.1)
+          -- (0.05,0.25) arc (180:0:0.025) -- (0.1,0.1)
+          -- (0.1,0.275) arc (180:0:0.025) -- (0.15,0.1)
+          -- (0.15,0.25) arc (180:0:0.025) -- (0.2,0.025)
+          -- (0.2,0.15) arc (180:0:0.025) -- (0.25,0)
+          .. controls (0.25,-0.15) and (0,-0.15) .. (0,0);
+  }
+}
+\newcommand\@drawdivinefocus{
+  \tikz[scale=0.6]{
+    \fill[white,rounded corners=1] (0.1,0) rectangle (0.2,0.4);
+    \fill[white,rounded corners=1] (0,0.3) rectangle (0.3,0.2);
+  }
+}
+\newcommand\@drawfocus{
+  \tikz{
+    \filldraw[white] (0,0) circle [radius=0.025];
+    \draw[white,very thick] (0,0) circle [radius=0.1];
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Environments %%%%%
@@ -90,6 +111,7 @@
       \if@verbal\@drawverbal\fi
       \if@somatic\@drawsomatic\fi
       \if@divinefocus\@drawdivinefocus\fi
+      \if@focus\@drawfocus\fi
     };
   \end{tikzpicture}
   
