@@ -99,44 +99,138 @@
   
   \begin{spell}
     \spellname{Light}
+    \spellschool{Evocation}
+    \castingtime{\oneaction}
+    \verbal\material{A firefly}
+    \castingrange{Touch}
+    \spelltarget{Object touched}
+    \spellduration{10 min/level}
+    \savingthrow{none}
+    \resistno
+    \spelldescription{This spell causes a touched object to glow like a torch, shedding normal light in a 20~foot radius from the point touched, and increasing the light level for an additional 20~feet by one step, up to normal light (darkness becomes dim light, and dim light becomes normal light). In an area of normal or bright light, this spell has no effect. The effect is immobile, but it can be cast on a movable object.
+    
+    You can only have one light spell active at any one time. If you cast this spell while another casting is still in effect, the previous casting is dispelled. If you make this spell permanent (through permanency or a similar effect), it does not count against this limit. Light can be used to counter or dispel any darkness spell of equal or lower spell level.}
   \end{spell}
   
   \begin{spell}
     \spellname{Mending}
+    \spellschool{Transmutation}
+    \castingtime{10 minutes}
+    \verbal\somatic
+    \castingrange{10~ft.}
+    \spelltarget{One object of up to 1 lb/level}
+    \spellduration{Instantaneous}
+    \savingthrow{Will negates (harmless, object)}
+    \resistyes
+    \spelldescription{This spell repairs damaged objects, restoring 1d4 hit points to the object. If the object has the broken condition, this condition is removed if the object is restored to at least half its original hit point.s All of the pieces of an object must be present for this spell to function. Magic items can be repaired by this spell, but you must have a caster level equal to or higher than that of the object. Magic items that are destroyed (at 0 hit points or less) can be repaired with this spell, but this spell does not restore their magic abilities. This spell does not affect creatures (including constructs). This spell has no effect on objects that have been warped or otherwise transmuted, but it can still repair damage done to such items.}
   \end{spell}
   
   \begin{spell}
     \spellname{Purify Food and Drink}
+    \spellschool{Transmutation}
+    \castingtime{\oneaction}
+    \verbal\somatic
+    \castingrange{10~ft}
+    \spelltarget{1 cu ft/level of contaminated food and water}
+    \spellduration{Instantaneous}
+    \savingthrow{Will negates (object)}
+    \resistyes
+    \spelldescription{This spell makes spoiled, rotten, diseased, poisonous, or otherwise contaminated food and water pure and suitable for eating and drinking. This spell does not prevent subsequent natural decay or spoilage. Unholy water and similar food and drink of significance is spoiled by purify food and drink, but the spell has no effect on creatures of any type nor upon magic potions. Water weighs about 8 pounds per gallon. One cubit foot of water contains roughly 8 gallons and weighs about 60 pounds.}
   \end{spell}
   
   \begin{spell}
     \spellname{Read Magic}
+    \spellschool{Divination}
+    \castingtime{\oneaction}
+    \verbal\somatic\focus{A clear crystal or mineral prism}
+    \castingrange{Personal}
+    \spelltarget{You}
+    \spellduration{You can decipher magical inscriptions on objects---books, scrolls, weapons, and the like---that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed or trapped scroll. Furthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of read magic. You can read at the rate of one page (250 words) per minute. The spell allows you to identify a glyph of warding with a DC~13 Spellcraft check, a greater glyph of warding with a DC~16 Spellcraft check, or any symbol spell with a Spellcraft check \mbox{(DC 10 + spell level)}.
+    
+    Read magic can be made permanent with a permanency spell.}
   \end{spell}
   
   \begin{spell}
     \spellname{Resistance}
+    \spellschool{Abjuration}
+    \castingtime{\oneaction}
+    \verbal\somatic\divinefocus{(A miniature cloak)}
+    \castingrange{Touch}
+    \spelltarget{Creature touched}
+    \spellduration{1 minute}
+    \savingthrow{Will negates (harmless)}
+    \resistyes
+    \spelldescription{You imbue the subject with magical energy that protects it from harm, granting it a +1 resistance bonus on saves.
+    
+    Resistance can be made permanent with a permanency spell.}
   \end{spell}
   
   \begin{spell}
     \spellname{Stabilize}
+    \spellschool{Conjuration (healing)}
+    \castingtime{\oneaction}
+    \verbal\somatic
+    \castingrange{\shortrange}
+    \spelltarget{One living creature}
+    \spellduration{Instantaneous}
+    \savingthrow{Will negates (harmless)}
+    \resistyes
+    \spelldescription{Upon casting this spell, you target a living creature that has $-1$ or fewer hit points. That creature is automatically stabilized and does not lose any further hit points. If the creature later takes damage, it continues dying normally.}
   \end{spell}
   
   \begin{spell}
     \spellname{Virtue}
+    \spellschool{Transmutation}
+    \castingtime{\oneaction}
+    \verbal\somatic\divinefocus{}
+    \castingrange{Touch}
+    \spelltarget{Creature touched}
+    \spellduration{1 minute}
+    \savingthrow{None}
+    \resistyes
+    \spelldescription{With a touch, you infuse a creature with a tiny surge of life, granting the subject 1 temporary hit point.}
   \end{spell}
   
   \section*{1st level}
   
   \begin{spell}
     \spellname{Bane}
+    \spellschool{Enchantment (compulsion) [fear, mind-affecting]}
+    \castingtime{\oneaction}
+    \verbal\somatic\divinefocus{}
+    \castingrange{50~ft}
+    \spellarea{50~ft radius burst, centered on you}
+    \spellduration{1 min/level}
+    \savingthrow{Will negates}
+    \resistyes
+    \spelldescription{Bane fills your enemies with fear and doubt. Each affected creature takes a $-1$ penalty on attack rolls and a $-1$ penalty on saving throws against fear effects. Bane counters and dispels bless.}
   \end{spell}
   
   \begin{spell}
     \spellname{Bless}
+    \spellschool{Enchantment (compulsion) [mind-affecting]}
+    \castingtime\oneaction
+    \verbal\somatic\divinefocus{}
+    \castingrange{50 ft}
+    \spellarea{The caster and all allies within a 50~ft burst, centered on the caster}
+    \spellduration{1 min/level}
+    \savingthrow{None}
+    \resistyes
+    \spelldescription{Bless fills your allies with courage. Each ally gains a $+1$ morale bonus on attack rolls and on saving throws against fear effects.
+    
+    Bless counters and dispels bane.}
   \end{spell}
   
   \begin{spell}
     \spellname{Bless Water}
+    \spellschool{Transmutation [good]}
+    \verbal\somatic\material{5 pounds of powdered silver worth 25 gp}
+    \castingrange{Touch}
+    \spelltarget{Flask of water touched}
+    \spellduration{Instantaneous}
+    \savingthrow{Will negates (object)}
+    \resistyes
+    \spelldescription{This transmutation imbues a flask (1~pint) of water with positive energy, turning it into holy water (see page 160).}
   \end{spell}
   
   \begin{spell}

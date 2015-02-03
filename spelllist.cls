@@ -90,7 +90,7 @@
     \noindent\textbf{Components}
     \if@verbal{} V\fi
     \if@somatic{} S\fi
-    \if@divinefocus{} DF\fi
+    \if@divinefocus{} DF \@divinefocus\fi
     \if@material{} M (\@material)\fi
     \if@focus{} F (\@focus)\fi
     
@@ -187,7 +187,8 @@
     \newif\if@somatic
     \newcommand\somatic\@somatictrue
     \newif\if@divinefocus
-    \newcommand\divinefocus\@divinefocustrue
+    \newcommand\@divinefocus{}
+    \newcommand\divinefocus[1]{\renewcommand\@divinefocus{##1}\@divinefocustrue}
     \newif\if@material
     \newcommand\@material{}
     \newcommand\material[1]{\renewcommand\@material{##1}\@materialtrue}
