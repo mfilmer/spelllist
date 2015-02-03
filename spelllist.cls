@@ -76,7 +76,7 @@
 }
 \newcommand\@drawsomatic{
   \tikz[scale=0.5]{
-    \draw [thick] (0,0)
+    \draw [semithick] (0,0)
           -- (0,0.2) arc (180:0:0.025) -- (0.05,0.1)
           -- (0.05,0.25) arc (180:0:0.025) -- (0.1,0.1)
           -- (0.1,0.275) arc (180:0:0.025) -- (0.15,0.1)
@@ -97,6 +97,12 @@
     \draw[white,very thick] (0,0) circle [radius=0.1];
   }
 }
+\newcommand\@drawmaterial{
+  \tikz[scale=0.6]{
+    \draw[white,semithick] (0,0) -- (0.2,-0.2) .. controls (0.3,-0.3) and (0.4,-0.2) .. (0.3,-0.1) -- (0.1,0.1);
+    \filldraw[white] (0.1,-0.1) -- (0.3,-0.1) .. controls (0.4,-0.2) and (0.3,-0.3) .. (0.2,-0.2) -- cycle;
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Environments %%%%%
@@ -112,6 +118,7 @@
       \if@somatic\@drawsomatic\fi
       \if@divinefocus\@drawdivinefocus\fi
       \if@focus\@drawfocus\fi
+      \if@material\@drawmaterial\fi
     };
   \end{tikzpicture}
   
