@@ -60,7 +60,8 @@
 %%%%%%%%%%%%%%%%%%%%
 %%%%% Packages %%%%%
 %%%%%%%%%%%%%%%%%%%%
-\RequirePackage{geometry}
+%\RequirePackage{geometry}
+\RequirePackage{tikz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Commands %%%%%
@@ -71,28 +72,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\@typesetspell{
-  \noindent\@spellname
-  
-  \noindent\@spellschool
-  
-  \noindent\@castingtime
-  
-  \noindent\textbf{Components}
-  \if@verbal{} V\fi
-  \if@somatic{} S\fi
-  \if@divinefocus{} DF\fi
-  \if@material{} M (\@material)\fi
-  \if@focus{} F (\@focus)\fi
-  
-  \noindent\@castingrange
-  
-  \noindent\@spelltarget
-  
-  \noindent\@spellduration
-  
-  \@savingthrow
-  
-  \@description
+  \begin{tikzpicture}
+    \node [text width=\linewidth,fill=gray,text=white,draw=gray] (title) at (0,0) {\textsc{\@spellname}};
+    
+    \node [anchor=north west,draw=gray,text width=\linewidth] at (title.south west)
+    {
+      \noindent\textbf{School} \@spellschool
+      
+      \if@castingtime
+        \noindent\textbf{Casting Time} \@castingtime
+      \fi
+      
+      \noindent\textbf{Components}
+      \if@verbal{} V\fi
+      \if@somatic{} S\fi
+      \if@divinefocus{} DF\fi
+      \if@material{} M (\@material)\fi
+      \if@focus{} F (\@focus)\fi
+      
+      \if@castingrange
+        \noindent\textbf{Range} \@castingrange
+      \fi
+      
+      \if@spelltarget
+        \noindent\textbf{Target} \@spelltarget
+      \fi
+      
+      \if@spellduration
+        \noindent\textbf{Duration} \@spellduration
+      \fi
+      
+      \if@savingthrow
+        \noindent\textbf{Saving Throw} \@savingthrow
+      \fi
+      
+      \begin{minipage}{\linewidth}
+        \parindent=1em
+        \@description
+      \end{minipage}
+    };
+  \end{tikzpicture}
 }
 
 \newenvironment{spell} 
@@ -104,25 +123,32 @@
     \newcommand\@spellschool{}
     \newcommand\spellschool[1]{\renewcommand\@spellschool{##1}}
     
+    \newif\if@castingtime
     \newcommand\@castingtime{}
-    \newcommand\castingtime[1]{\renewcommand\@castingtime{##1}}
+    \newcommand\castingtime[1]{\renewcommand\@castingtime{##1}\@castingtimetrue}
     \newcommand\oneaction{1 standard action}
     \newcommand\oneround{1 round}
     
+    \newif\if@castingrange
     \newcommand\@castingrange{}
-    \newcommand\castingrange[1]{\renewcommand\@castingrange{##1}}
+    \newcommand\castingrange[1]
+      {\renewcommand\@castingrange{##1}\@castingrangetrue}
     \newcommand\shortrange{short (25 ft. + 5 ft./2 levels)}
     \newcommand\mediumrange{medium (100 ft. + 10 ft./level)}
     \newcommand\longrange{long}
     
+    \newif\if@spelltarget
     \newcommand\@spelltarget{}
-    \newcommand\spelltarget[1]{\renewcommand\@spelltarget{##1}}
+    \newcommand\spelltarget[1]{\renewcommand\@spelltarget{##1}\@spelltargettrue}
     
+    \newif\if@spellduration
     \newcommand\@spellduration{}
-    \newcommand\spellduration[1]{\renewcommand\@spellduration{##1}}
+    \newcommand\spellduration[1]
+      {\renewcommand\@spellduration{##1}\@spelldurationtrue}
     
+    \newif\if@savingthrow
     \newcommand\@savingthrow{}
-    \newcommand\savingthrow[1]{\renewcommand\@savingthrow{##1}}
+    \newcommand\savingthrow[1]{\renewcommand\@savingthrow{##1}\@savingthrowtrue}
     
     \newcommand\@description{}
     \newcommand\spelldescription[1]{\renewcommand\@description{##1}}
