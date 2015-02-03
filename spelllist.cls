@@ -72,65 +72,51 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\@typesetspell{
-  \begin{tikzpicture}
-    \node [text width=0.97\linewidth,fill=gray,text=white,draw=gray,inner sep=0pt,align=center] (title) at (0,0)
+  \par\noindent\begin{tikzpicture}
+    \node [text width=0.97\linewidth,fill=gray,text=white] (title) at (0,0)
     {
-      \par
-      \begin{minipage}{0.95\linewidth}
-        \textsc{\@spellname}
-      \end{minipage}
-      \vspace{1ex}
-    };
-    
-    \node [anchor=north west,draw=gray,text width=0.97\linewidth,inner sep=0pt,align=center] at (title.south west)
-    {
-      \par\vspace{1ex}
-      \begin{minipage}{0.95\linewidth}
-        \noindent\textbf{School} \@spellschool
-        
-        \if@castingtime
-          \noindent\textbf{Casting Time} \@castingtime
-        \fi
-        
-        \noindent\textbf{Components}
-        \if@verbal{} V\fi
-        \if@somatic{} S\fi
-        \if@divinefocus{} DF\fi
-        \if@material{} M (\@material)\fi
-        \if@focus{} F (\@focus)\fi
-        
-        \if@castingrange
-          \noindent\textbf{Range} \@castingrange
-        \fi
-        
-        \if@spellarea
-          \noindent\textbf{Area} \@spellarea
-        \fi
-        
-        \if@spelleffect
-          \noindent\textbf{Effect} \@spelleffect
-        \fi
-        
-        \if@spelltarget
-          \noindent\textbf{Target} \@spelltarget
-        \fi
-        
-        \if@spellduration
-          \noindent\textbf{Duration} \@spellduration
-        \fi
-        
-        \if@savingthrow
-          \noindent\textbf{Saving Throw} \@savingthrow
-        \fi
-        
-        \begin{minipage}{\linewidth}
-          \parindent=1em
-          \@description
-        \end{minipage}
-        \vspace{0.5ex}
-      \end{minipage}
+      \textsc{\@spellname}
     };
   \end{tikzpicture}
+  
+  \noindent\textbf{School} \@spellschool
+  
+  \if@castingtime
+    \noindent\textbf{Casting Time} \@castingtime
+  \fi
+  
+  \noindent\textbf{Components}
+  \if@verbal{} V\fi
+  \if@somatic{} S\fi
+  \if@divinefocus{} DF\fi
+  \if@material{} M (\@material)\fi
+  \if@focus{} F (\@focus)\fi
+  
+  \if@castingrange
+    \noindent\textbf{Range} \@castingrange
+  \fi
+  
+  \if@spellarea
+    \noindent\textbf{Area} \@spellarea
+  \fi
+  
+  \if@spelleffect
+    \noindent\textbf{Effect} \@spelleffect
+  \fi
+  
+  \if@spelltarget
+    \noindent\textbf{Target} \@spelltarget
+  \fi
+  
+  \if@spellduration
+    \noindent\textbf{Duration} \@spellduration
+  \fi
+  
+  \if@savingthrow
+    \noindent\textbf{Saving Throw} \@savingthrow
+  \fi
+  
+  \@description
 }
 
 \newenvironment{spell} 
