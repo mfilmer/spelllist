@@ -103,6 +103,10 @@
           \noindent\textbf{Range} \@castingrange
         \fi
         
+        \if@spellarea
+          \noindent\textbf{Area} \@spellarea
+        \fi
+        
         \if@spelleffect
           \noindent\textbf{Effect} \@spelleffect
         \fi
@@ -151,6 +155,11 @@
     \newcommand\shortrange{close (25 ft. + 5 ft./2 levels)}
     \newcommand\mediumrange{medium (100 ft. + 10 ft./level)}
     \newcommand\longrange{long}
+    
+    \newif\if@spellarea
+    \newcommand\@spellarea{}
+    \newcommand\spellarea[1]
+      {\renewcommand\@spellarea{##1}\@spellareatrue}
     
     \newif\if@spelleffect
     \newcommand\@spelleffect{}
