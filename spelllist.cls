@@ -47,7 +47,7 @@
 }
 
 % Default options
-\ExecuteOptions{1}
+\ExecuteOptions{}
 
 % Process options
 \ProcessOptions\relax
@@ -55,7 +55,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Load Base Class %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\LoadClass{article}
+\LoadClass[twocolumn]{article}
 
 %%%%%%%%%%%%%%%%%%%%
 %%%%% Packages %%%%%
@@ -71,26 +71,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\@typesetspell{
-  \@spellname
+  \noindent\@spellname
   
-  \@spellschool
+  \noindent\@spellschool
   
-  \@castingtime
+  \noindent\@castingtime
   
-  %\@spellcomponents
+  \noindent\textbf{Components}
+  \if@verbal{} V\fi
+  \if@somatic{} S\fi
+  \if@divinefocus{} DF\fi
+  \if@material{} M (\@material)\fi
+  \if@focus{} F (\@focus)\fi
   
-  \@castingrange
+  \noindent\@castingrange
   
-  \@spelltarget
+  \noindent\@spelltarget
   
-  \@spellduration
+  \noindent\@spellduration
   
-  %\@savingthrow
+  \@savingthrow
   
-  %\@description
+  \@description
 }
 
-\newenvironment{spell}
+\newenvironment{spell} 
   {
     % Spell information
     \newcommand\@spellname{}
@@ -106,7 +111,7 @@
     
     \newcommand\@castingrange{}
     \newcommand\castingrange[1]{\renewcommand\@castingrange{##1}}
-    \newcommand\shortrange{short}
+    \newcommand\shortrange{short (25 ft. + 5 ft./2 levels)}
     \newcommand\mediumrange{medium (100 ft. + 10 ft./level)}
     \newcommand\longrange{long}
     
@@ -116,15 +121,24 @@
     \newcommand\@spellduration{}
     \newcommand\spellduration[1]{\renewcommand\@spellduration{##1}}
     
+    \newcommand\@savingthrow{}
+    \newcommand\savingthrow[1]{\renewcommand\@savingthrow{##1}}
+    
+    \newcommand\@description{}
+    \newcommand\spelldescription[1]{\renewcommand\@description{##1}}
+    
     % Spell components
-    \newif\ifverbal
-    \newif\ifsomatic
-    \newif\ifdivinefocus
-    \newif\ifmaterial
+    \newif\if@verbal
+    \newcommand\verbal\@verbaltrue
+    \newif\if@somatic
+    \newcommand\somatic\@somatictrue
+    \newif\if@divinefocus
+    \newcommand\divinefocus\@divinefocustrue
+    \newif\if@material
     \newcommand\@material{}
-    \newcommand\material[1]{\renewcommand\@material{##1}\materialtrue}
-    \newif\iffocus
+    \newcommand\material[1]{\renewcommand\@material{##1}\@materialtrue}
+    \newif\if@focus
     \newcommand\@focus{}
-    \newcommand\focus[1]{\renewcommand\@focus{##1}\focustrue}
+    \newcommand\focus[1]{\renewcommand\@focus{##1}\@focustrue}
   }
   {\@typesetspell}
