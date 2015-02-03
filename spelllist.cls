@@ -66,6 +66,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Commands %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These draw commands assume you are already in a tikzpicture
+\newcommand\@drawverbal{
+  \tikz{
+    \draw [very thick] (0,0) ++(-30:0.1) arc (-30:30:0.1);
+    \draw [very thick] (0,0) ++(-30:0.2) arc (-30:30:0.2);
+    \draw [very thick] (0,0) ++(-30:0.3) arc (-30:30:0.3);
+  } 
+}
+\newcommand\@drawsomatic{}
+\newcommand\@drawdivinefocus{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Environments %%%%%
@@ -76,6 +86,10 @@
     \node [text width=0.97\linewidth,fill=gray,text=white] (title) at (0,0)
     {
       \textsc{\@spellname}
+      \hfill
+      \if@verbal\@drawverbal\fi
+      \if@somatic\@drawsomatic\fi
+      \if@divinefocus\@drawdivinefocus\fi
     };
   \end{tikzpicture}
   
