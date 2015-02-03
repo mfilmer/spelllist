@@ -79,42 +79,50 @@
     };
   \end{tikzpicture}
   
-  \noindent\textbf{School} \@spellschool
-  
-  \if@castingtime
-    \noindent\textbf{Casting Time} \@castingtime
-  \fi
-  
-  \noindent\textbf{Components}
-  \if@verbal{} V\fi
-  \if@somatic{} S\fi
-  \if@divinefocus{} DF\fi
-  \if@material{} M (\@material)\fi
-  \if@focus{} F (\@focus)\fi
-  
-  \if@castingrange
-    \noindent\textbf{Range} \@castingrange
-  \fi
-  
-  \if@spellarea
-    \noindent\textbf{Area} \@spellarea
-  \fi
-  
-  \if@spelleffect
-    \noindent\textbf{Effect} \@spelleffect
-  \fi
-  
-  \if@spelltarget
-    \noindent\textbf{Target} \@spelltarget
-  \fi
-  
-  \if@spellduration
-    \noindent\textbf{Duration} \@spellduration
-  \fi
-  
-  \if@savingthrow
-    \noindent\textbf{Saving Throw} \@savingthrow
-  \fi
+  \vspace{-2.5ex}
+  \begin{flushleft}
+    \noindent\textbf{School} \@spellschool
+    
+    \if@castingtime
+      \noindent\textbf{Casting Time} \@castingtime
+    \fi
+    
+    \noindent\textbf{Components}
+    \if@verbal{} V\fi
+    \if@somatic{} S\fi
+    \if@divinefocus{} DF\fi
+    \if@material{} M (\@material)\fi
+    \if@focus{} F (\@focus)\fi
+    
+    \if@castingrange
+      \noindent\textbf{Range} \@castingrange
+    \fi
+    
+    \if@spellarea
+      \noindent\textbf{Area} \@spellarea
+    \fi
+    
+    \if@spelleffect
+      \noindent\textbf{Effect} \@spelleffect
+    \fi
+    
+    \if@spelltarget
+      \noindent\textbf{Target} \@spelltarget
+    \fi
+    
+    \if@spellduration
+      \noindent\textbf{Duration} \@spellduration
+    \fi
+    
+    \if@savingthrow
+      \noindent\textbf{Saving Throw} \@savingthrow
+    \fi
+    
+    \if@spellresist
+      \noindent\textbf{Spell Resist} \@spellresist
+    \fi
+  \end{flushleft}
+  \vspace{-2ex}
   
   \@description
 }
@@ -164,6 +172,11 @@
     \newif\if@savingthrow
     \newcommand\@savingthrow{}
     \newcommand\savingthrow[1]{\renewcommand\@savingthrow{##1}\@savingthrowtrue}
+    
+    \newif\if@spellresist
+    \newcommand\@spellresist{}
+    \newcommand\resistno{\renewcommand\@spellresist{No}\@spellresisttrue}
+    \newcommand\resistyes{\renewcommand\@spellresist{Yes}\@spellresisttrue}
     
     \newcommand\@description{}
     \newcommand\spelldescription[1]{\renewcommand\@description{##1}}
