@@ -73,7 +73,7 @@
 
 \newcommand\@typesetspell{
   \begin{tikzpicture}
-    \node [text width=\linewidth,fill=gray,text=white,draw=gray,inner sep=0pt,align=center] (title) at (0,0) 
+    \node [text width=0.97\linewidth,fill=gray,text=white,draw=gray,inner sep=0pt,align=center] (title) at (0,0)
     {
       \par
       \begin{minipage}{0.95\linewidth}
@@ -82,7 +82,7 @@
       \vspace{1ex}
     };
     
-    \node [anchor=north west,draw=gray,text width=\linewidth,inner sep=0pt,align=center] at (title.south west)
+    \node [anchor=north west,draw=gray,text width=0.97\linewidth,inner sep=0pt,align=center] at (title.south west)
     {
       \par\vspace{1ex}
       \begin{minipage}{0.95\linewidth}
@@ -103,6 +103,10 @@
           \noindent\textbf{Range} \@castingrange
         \fi
         
+        \if@spelleffect
+          \noindent\textbf{Effect} \@spelleffect
+        \fi
+        
         \if@spelltarget
           \noindent\textbf{Target} \@spelltarget
         \fi
@@ -119,7 +123,7 @@
           \parindent=1em
           \@description
         \end{minipage}
-        \vspace{-0.5ex}
+        \vspace{0.5ex}
       \end{minipage}
     };
   \end{tikzpicture}
@@ -147,6 +151,11 @@
     \newcommand\shortrange{close (25 ft. + 5 ft./2 levels)}
     \newcommand\mediumrange{medium (100 ft. + 10 ft./level)}
     \newcommand\longrange{long}
+    
+    \newif\if@spelleffect
+    \newcommand\@spelleffect{}
+    \newcommand\spelleffect[1]
+      {\renewcommand\@spelleffect{##1}\@spelleffecttrue}
     
     \newif\if@spelltarget
     \newcommand\@spelltarget{}
