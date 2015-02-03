@@ -1,1 +1,1 @@
-pdflatex example
+pdflatex cleric
