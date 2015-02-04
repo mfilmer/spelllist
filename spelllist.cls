@@ -104,6 +104,18 @@
   }
 }
 
+\newcommand\@drawluck{
+  \tikz[scale=0.3,baseline={(0,-0.15)}]{
+    \draw[white,line width=1,cap=round] (-0.2,0.2) .. controls (-0.6,-0.6) and (0.6,-0.6) .. (0.2,0.2);
+  }
+}
+\newcommand\@drawtravel{
+  \@drawmaterial
+  %\tikz{
+  %  \node at (0,0) {T};
+  %}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Environments %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,6 +126,9 @@
     {
       \textsc{\@spellname}
       \hfill
+      \if@luck\@drawluck\fi
+      \if@travel\@drawtravel\fi
+      \hspace{2ex}
       \if@verbal\@drawverbal\fi
       \if@somatic\@drawsomatic\fi
       \if@divinefocus\@drawdivinefocus\fi
@@ -237,5 +252,11 @@
     \newif\if@focus
     \newcommand\@focus{}
     \newcommand\focus[1]{\renewcommand\@focus{##1}\@focustrue}
+    
+    % Spell domains
+    \newif\if@luck
+    \newcommand\luck\@lucktrue
+    \newif\if@travel
+    \newcommand\travel\@traveltrue
   }
   {\noindent\@typesetspell}
