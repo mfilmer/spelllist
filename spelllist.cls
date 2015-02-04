@@ -84,6 +84,18 @@
           -- (0.2,0.15) arc (180:0:0.025) -- (0.25,0)
           .. controls (0.25,-0.15) and (0,-0.15) .. (0,0);
   }
+  %\tikz[x=1ex,y=1ex]{
+  %  \begin{scope}[shift={(0.2,0.2)}]
+  %  \draw [thin,white] (0,0.1)
+  %        -- (0,0.5) arc (180:0:0.05) -- (0.1,0.3)
+  %        -- (0.1,0.6) arc (180:0:0.05) -- (0.2,0.3)
+  %        -- (0.2,0.65) arc (180:0:0.05) -- (0.3,0.3)
+  %        -- (0.3,0.6) arc (180:0:0.05) -- (0.4,0.15)
+  %        -- (0.4,0.4) arc (180:0:0.05) -- (0.5,0.1)
+  %        .. controls (0.5,-0.2) and (0,-0.2) .. (0,0.1);
+  %  \end{scope}
+  %  \draw[thin,white] (0,0) rectangle (1,1);
+  %}
 }
 \newcommand\@drawdivinefocus{
   \tikz[scale=0.6]{
@@ -105,15 +117,19 @@
 }
 
 \newcommand\@drawluck{
-  \tikz[scale=0.3,baseline={(0,-0.15)}]{
+  \tikz[scale=0.25]{
+    \path[draw=white,use as bounding box] (-0.4,-0.5) rectangle (0.4,0.3);
     \draw[white,line width=1,cap=round] (-0.2,0.2) .. controls (-0.6,-0.6) and (0.6,-0.6) .. (0.2,0.2);
   }
 }
 \newcommand\@drawtravel{
-  \@drawmaterial
-  %\tikz{
-  %  \node at (0,0) {T};
-  %}
+  \tikz[x=1ex,y=1ex]{
+    %\draw[white,semithick] (0,0) -- (0.05,0) -- (0.05,0.025) -- (0.1,0) -- (0.2,0) .. controls (0.2,0.025) .. (0.15,0.05) -- (0.075,0.1) -- (0.075,0.125) -- (0,0.125) -- cycle;
+    %\draw[white,semithick,rounded corners=0.25] (0,-0.05) -- (0.075,-0.05) -- (0.075,-0.025) .. controls (0.075,-0.03) and (0.15,-0.05) .. (0.175,-0.05) -- (0.25,-0.05) -- (0.25,0) -- (0,0) -- cycle;
+    
+    %\filldraw[white,semithick,rounded corners=0.25] (0,-0.025) -- (0.075,-0.025) -- (0.075,-0.0125) to [out=330,in=180] (0.175,-0.025) -- (0.25,-0.025) -- (0.25,0) -- (0,0) -- cycle;
+    %\draw[white,semithick,rounded corners=0.25] (0,-0.025) to [out=90,in=250] (0.0125,0.075);
+  }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
