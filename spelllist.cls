@@ -68,21 +68,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % These draw commands assume you are already in a tikzpicture
 \newcommand\@drawverbal{
-  \tikz[scale=0.7]{
-    \draw [very thick] (0,0) ++(-30:0.1) arc (-30:30:0.1);
-    \draw [very thick] (0,0) ++(-30:0.2) arc (-30:30:0.2);
-    \draw [very thick] (0,0) ++(-30:0.3) arc (-30:30:0.3);
+  \tikz{
+    \path[use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
+    \begin{scope}[scale=0.6,shift={(-0.2,0)}]
+      \draw [very thick] (0,0) ++(-30:0.1) arc (-30:30:0.1);
+      \draw [very thick] (0,0) ++(-30:0.2) arc (-30:30:0.2);
+      \draw [very thick] (0,0) ++(-30:0.3) arc (-30:30:0.3);
+    \end{scope}
   } 
 }
 \newcommand\@drawsomatic{
-  \tikz[scale=0.5]{
-    \draw [semithick] (0,0)
-          -- (0,0.2) arc (180:0:0.025) -- (0.05,0.1)
-          -- (0.05,0.25) arc (180:0:0.025) -- (0.1,0.1)
-          -- (0.1,0.275) arc (180:0:0.025) -- (0.15,0.1)
-          -- (0.15,0.25) arc (180:0:0.025) -- (0.2,0.025)
-          -- (0.2,0.15) arc (180:0:0.025) -- (0.25,0)
-          .. controls (0.25,-0.15) and (0,-0.15) .. (0,0);
+  \tikz{
+    \path[use as bounding box] (-0.5ex,-0.65ex) rectangle (0.5ex,0.65ex);
+    \begin{scope}[scale=0.43,shift={(-0.125,-0.08)}]
+      \draw [semithick] (0,0)
+            -- (0,0.2) arc (180:0:0.025) -- (0.05,0.1)
+            -- (0.05,0.25) arc (180:0:0.025) -- (0.1,0.1)
+            -- (0.1,0.275) arc (180:0:0.025) -- (0.15,0.1)
+            -- (0.15,0.25) arc (180:0:0.025) -- (0.2,0.025)
+            -- (0.2,0.15) arc (180:0:0.025) -- (0.25,0)
+            .. controls (0.25,-0.15) and (0,-0.15) .. (0,0);
+    \end{scope}
   }
   %\tikz[x=1ex,y=1ex]{
   %  \begin{scope}[shift={(0.2,0.2)}]
@@ -98,14 +104,17 @@
   %}
 }
 \newcommand\@drawdivinefocus{
-  \tikz[scale=0.6]{
-    \fill[white,rounded corners=1] (0.1,0) rectangle (0.2,0.4);
-    \fill[white,rounded corners=1] (0,0.3) rectangle (0.3,0.2);
+  \tikz{
+    \path[use as bounding box] (-0.5ex,-0.65ex) rectangle (0.5ex,0.65ex);
+    \begin{scope}[scale=0.5,shift={(-0.15,-0.2)}]
+      \fill[white,rounded corners=0.75] (0.1,0) rectangle (0.2,0.4);
+      \fill[white,rounded corners=0.75] (0,0.3) rectangle (0.3,0.2);
+    \end{scope}
   }
 }
 \newcommand\@drawfocus{
   \tikz{
-    \path[draw=white,use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
+    \path[use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
     \begin{scope}[scale=0.8]
       \filldraw[white] (0,0) circle [radius=0.025];
       \draw[white,very thick] (0,0) circle [radius=0.1];
@@ -114,7 +123,7 @@
 }
 \newcommand\@drawmaterial{
   \tikz{
-    \path[draw=white,use as bounding box] (-0.6ex,-0.8ex) rectangle (0.6ex,0.5ex);
+    \path[use as bounding box] (-0.6ex,-0.8ex) rectangle (0.6ex,0.5ex);
     \begin{scope}[scale=0.5,shift={(-0.175,0.025)}]
       \draw[white,semithick] (0,0) -- (0.2,-0.2) .. controls (0.3,-0.3) and (0.4,-0.2) .. (0.3,-0.1) -- (0.1,0.1);
       \filldraw[white] (0.1,-0.1) -- (0.3,-0.1) .. controls (0.4,-0.2) and (0.3,-0.3) .. (0.2,-0.2) -- cycle;
@@ -124,7 +133,7 @@
 
 \newcommand\@drawluck{
   \tikz{
-    \path[draw=white,use as bounding box] (-0.6ex,-0.8ex) rectangle (0.6ex,0.5ex);
+    \path[use as bounding box] (-0.6ex,-0.8ex) rectangle (0.6ex,0.5ex);
     \begin{scope}[scale=0.25]
       \draw[white,line width=1,cap=round] (-0.2,0.2) .. controls (-0.6,-0.6) and (0.6,-0.6) .. (0.2,0.2);
     \end{scope}
