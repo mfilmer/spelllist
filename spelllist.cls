@@ -105,24 +105,29 @@
 }
 \newcommand\@drawfocus{
   \tikz{
-    \filldraw[white] (0,0) circle [radius=0.025];
-    \draw[white,very thick] (0,0) circle [radius=0.1];
+    \path[draw=white,use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
+    \begin{scope}[scale=0.8]
+      \filldraw[white] (0,0) circle [radius=0.025];
+      \draw[white,very thick] (0,0) circle [radius=0.1];
+    \end{scope}
   }
 }
 \newcommand\@drawmaterial{
-  \tikz[scale=0.6]{
-    %\path[draw=white,use as bounding box]
-    \begin{scope}
-    \draw[white,semithick] (0,0) -- (0.2,-0.2) .. controls (0.3,-0.3) and (0.4,-0.2) .. (0.3,-0.1) -- (0.1,0.1);
-    \filldraw[white] (0.1,-0.1) -- (0.3,-0.1) .. controls (0.4,-0.2) and (0.3,-0.3) .. (0.2,-0.2) -- cycle;
+  \tikz{
+    \path[draw=white,use as bounding box] (-0.6ex,-0.8ex) rectangle (0.6ex,0.5ex);
+    \begin{scope}[scale=0.5,shift={(-0.175,0.025)}]
+      \draw[white,semithick] (0,0) -- (0.2,-0.2) .. controls (0.3,-0.3) and (0.4,-0.2) .. (0.3,-0.1) -- (0.1,0.1);
+      \filldraw[white] (0.1,-0.1) -- (0.3,-0.1) .. controls (0.4,-0.2) and (0.3,-0.3) .. (0.2,-0.2) -- cycle;
     \end{scope}
   }
 }
 
 \newcommand\@drawluck{
-  \tikz[scale=0.25]{
-    \path[draw=white,use as bounding box] (-0.4,-0.5) rectangle (0.4,0.3);
-    \draw[white,line width=1,cap=round] (-0.2,0.2) .. controls (-0.6,-0.6) and (0.6,-0.6) .. (0.2,0.2);
+  \tikz{
+    \path[draw=white,use as bounding box] (-0.6ex,-0.8ex) rectangle (0.6ex,0.5ex);
+    \begin{scope}[scale=0.25]
+      \draw[white,line width=1,cap=round] (-0.2,0.2) .. controls (-0.6,-0.6) and (0.6,-0.6) .. (0.2,0.2);
+    \end{scope}
   }
 }
 \newcommand\@drawtravel{
