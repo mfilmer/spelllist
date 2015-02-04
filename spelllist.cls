@@ -111,8 +111,11 @@
 }
 \newcommand\@drawmaterial{
   \tikz[scale=0.6]{
+    %\path[draw=white,use as bounding box]
+    \begin{scope}
     \draw[white,semithick] (0,0) -- (0.2,-0.2) .. controls (0.3,-0.3) and (0.4,-0.2) .. (0.3,-0.1) -- (0.1,0.1);
     \filldraw[white] (0.1,-0.1) -- (0.3,-0.1) .. controls (0.4,-0.2) and (0.3,-0.3) .. (0.2,-0.2) -- cycle;
+    \end{scope}
   }
 }
 
