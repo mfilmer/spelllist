@@ -141,11 +141,9 @@
 }
 \newcommand\@drawtravel{
   \tikz{
-    \path[draw=white,use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
-    \begin{scope}[x=1ex,y=1ex]
-      \coordinate (start) at (-45:1);
-      \coordinate (stop) at (225:1);
-      \draw[white] (start)  arc (-45:225:1) -- ++(0,-0.5) -- (start) ++(0,-0.5);
+    \path[use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
+    \begin{scope}[scale=1.1,x=1ex,y=1ex]
+      \draw[white,->,thick] (-0.5,-0.5) to [in=215,out=55] (0.5,0.5);
     \end{scope}
   }
 }
