@@ -148,7 +148,7 @@ mere presence can spread good fortune.
     \spellname{Light}
     \spellschool{Evocation}
     \castingtime{\oneaction}
-    \verbal\material{A firefly}
+    \verbal\divinefocus
     \castingrange{Touch}
     \spelltarget{Object touched}
     \spellduration{10 min/level}
@@ -282,14 +282,47 @@ mere presence can spread good fortune.
   
   \begin{spell}
     \spellname{Cause Fear}
+    \spellschool{necromancy [fear, mind-affecting]}
+    \castingtime{\oneaction}
+    \verbal\somatic
+    \castingrange{\shortrange}
+    \spelltarget{One living creature with 5 or fewer HD}
+    \spellduration{1d4 rounds or 1 round; see text}
+    \savingthrow{Will partial}
+    \resistyes
+    \spelldescription{The affected creature becomes frightened. If the subject succeeds on a Will save, it is shaken for 1 round. Creatures with 6 or more HD are immune to this effect. Cause fear counters and dispels remove fear.}
   \end{spell}
   
   \begin{spell}
     \spellname{Command}
+    \spellschool{Enchantment (compulsion) [language-dependent, mind-affecting]}
+    \verbal
+    \castingrange{\shortrange}
+    \spelltarget{One living creature}
+    \spellduration{\oneround}
+    \savingthrow{Will negates}
+    \resistyes
+    \spelldescription{You give the subject a single command, which it obeys to the best of its ability at its earliest opportunity. You may select from the following options.
+    
+    \emph{Approach:} On its turn, the subject moves toward you as quickly and directly as possible for 1 round. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
+    
+    \emph{Drop:} On its turn, the subject drops whatever it is holing. It can't pick up any dropped item until its next turn.
+    
+    \emph{Fall:} On its turn, the subject falls to the ground and remains prone for 1 round. It may act normally while prone but takes any appropriate penalties.
+    
+    \emph{Flee:} On its turn, the subject moves away from you as quickly as possible for 1 round. It may do nothing but move during its turn, and itprovokes attacks of opportunity for this movement as normal.
+    
+    \emph{Halt:} The subject stands in place for 1 round. It may not take any actions but is not considered helpless.
+    
+    If the subject can't carry out your command on its next turn, the spell automatically fails.}
   \end{spell}
   
   \begin{spell}
     \spellname{Comprehend Languages}
+    \spellschool{Divination}
+    \castingtime{\oneaction}
+    \verbal\somatic\divinefocus{(pinch of soot and salt)}
+    
   \end{spell}
   
   \begin{spell}
