@@ -140,12 +140,13 @@
   }
 }
 \newcommand\@drawtravel{
-  \tikz[x=1ex,y=1ex]{
-    %\draw[white,semithick] (0,0) -- (0.05,0) -- (0.05,0.025) -- (0.1,0) -- (0.2,0) .. controls (0.2,0.025) .. (0.15,0.05) -- (0.075,0.1) -- (0.075,0.125) -- (0,0.125) -- cycle;
-    %\draw[white,semithick,rounded corners=0.25] (0,-0.05) -- (0.075,-0.05) -- (0.075,-0.025) .. controls (0.075,-0.03) and (0.15,-0.05) .. (0.175,-0.05) -- (0.25,-0.05) -- (0.25,0) -- (0,0) -- cycle;
-    
-    %\filldraw[white,semithick,rounded corners=0.25] (0,-0.025) -- (0.075,-0.025) -- (0.075,-0.0125) to [out=330,in=180] (0.175,-0.025) -- (0.25,-0.025) -- (0.25,0) -- (0,0) -- cycle;
-    %\draw[white,semithick,rounded corners=0.25] (0,-0.025) to [out=90,in=250] (0.0125,0.075);
+  \tikz{
+    \path[draw=white,use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
+    \begin{scope}[x=1ex,y=1ex]
+      \coordinate (start) at (-45:1);
+      \coordinate (stop) at (225:1);
+      \draw[white] (start)  arc (-45:225:1) -- ++(0,-0.5) -- (start) ++(0,-0.5);
+    \end{scope}
   }
 }
 
