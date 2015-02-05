@@ -246,9 +246,9 @@
     \newcommand\@castingrange{}
     \newcommand\castingrange[1]
       {\renewcommand\@castingrange{##1}\@castingrangetrue}
-    \newcommand\shortrange{close (25~ft. + 5 ft./2 levels)}
-    \newcommand\mediumrange{medium (100~ft. + 10 ft./level)}
-    \newcommand\longrange{long (400~ft. + 40 ft./level)}
+    \newcommand\shortrange{Close (25~ft. + 5 ft./2 levels)}
+    \newcommand\mediumrange{Medium (100~ft. + 10 ft./level)}
+    \newcommand\longrange{Long (400~ft. + 40 ft./level)}
     
     \newif\if@spellarea
     \newcommand\@spellarea{}
