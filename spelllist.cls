@@ -147,6 +147,15 @@
     \end{scope}
   }
 }
+\newcommand\@drawcleric{
+  \tikz{
+    \path[use as bounding box] (-0.65ex,-0.65ex) rectangle (0.65ex,0.65ex);
+    \begin{scope}
+      \fill[white] (0,0) ++(0:0.1) arc (270:180:0.1) arc (0:-90:0.1) arc (90:0:0.1) arc (180:90:0.1);
+      \draw[white] (0,0) circle [radius=0.1];
+    \end{scope}
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Environments %%%%%
@@ -158,6 +167,7 @@
     {
       \textsc{\@spellname}
       \hfill
+      \if@cleric\@drawcleric\fi
       \if@luck\@drawluck\fi
       \if@travel\@drawtravel\fi
       \hspace{2ex}
@@ -290,5 +300,9 @@
     \newcommand\luck\@lucktrue
     \newif\if@travel
     \newcommand\travel\@traveltrue
+    
+    % Base cleric spells
+    \newif\if@cleric
+    \newcommand\cleric\@clerictrue
   }
   {\noindent\@typesetspell}
