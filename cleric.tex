@@ -6,7 +6,7 @@
 \usepackage{lipsum}
 
 \begin{document}
-  \section*{Spell List}
+  \section*{Cleric Spell List}
   
   \subsection*{Orisons}
   \subsubsection*{Core}
@@ -41,6 +41,7 @@
     \textbf{Spark:} Ignites flammable objects.
   \end{flushleft}
   
+  \newpage
   \subsection*{1st Level}
   \subsubsection*{Core}
   \begin{flushleft}
@@ -100,6 +101,7 @@
     \textbf{Dancing Lantern:} Animates a lantern that follows you.
   \end{flushleft}
   
+  \newpage
   \subsection*{2nd Level}
   \subsubsection*{Core}
   
@@ -109,45 +111,88 @@
     \textbf{Align Weapon:} Weapon becomes good, evil, lawful, or chaotic.
     
     \textbf{Augury MF:} Learns whether an action will be good or bad.
+    
     \textbf{Bear’s Endurance:} Subject gains +4 to Con for 1 min./level.
+    
     \textbf{Bull’s Strength:} Subject gains +4 to Str for 1 min./level.
+    
     \textbf{Calm Emotions:} Calms creatures, negating emotion effects.
+    
     \textbf{Consecrate\textsuperscript{M}:} Fills area with positive energy, weakening undead.
+    
     \textbf{Cure Moderate Wounds:} Cures 2d8 damage + 1/level (max +10).
+    
     \textbf{Darkness:} 20-ft. radius of supernatural shadow.
+    
     \textbf{Death Knell:} Kills dying creature; you gain 1d8 temporary
     hp, +2 to Str, and +1 caster level.
+    
     \textbf{Delay Poison:} Stops poison from harming target for 1 hour/level.
+    
     \textbf{Eagle’s Splendor:} Subject gains +4 to Cha for 1 min./level.
+    
     \textbf{Enthrall:} Captivates all within 100 ft. + 10 ft./level.
+    
     \textbf{Find Traps:} Notice traps as a rogue does.
+    
     \textbf{Gentle Repose:} Preserves one corpse.
+    
     \textbf{Hold Person:} Paralyzes one humanoid for 1 round/level.
+    
     \textbf{Inflict Moderate Wounds:} Touch attack, 2d8 damage + 1/level
     (max +10).
+    
     \textbf{Make Whole:} Repairs an object.
+    
     \textbf{Owl’s Wisdom:} Subject gains +4 to Wis for 1 min./level.
+    
     \textbf{Remove Paralysis:} Frees creatures from paralysis or slow effect.
+    
     \textbf{Resist Energy:} Ignores 10 (or more) points of damage/attack
     from specified energy type.
+    
     \textbf{Restoration, Lesser:} Dispels magical ability penalty or
     repairs 1d4 ability damage.
+    
     \textbf{Shatter:} Sonic vibration damages objects or crystalline
     creatures.
+    
     \textbf{Shield Other\textsuperscript{F}:} You take half of subject’s damage.
+    
     \textbf{Silence:} Negates sound in 20-ft. radius.
+    
     \textbf{Sound Burst:} Deals 1d8 sonic damage to subjects; may stun them.
+    
     \textbf{Spiritual Weapon:} Magic weapon attacks on its own.
+    
     \textbf{Status:} Monitors condition, position of allies.
+    
     \textbf{Summon Monster II:} Summons extraplanar creature to
     fight for you.
+    
     \textbf{Undetectable Alignment:} Conceals alignment for 24 hours.
+    
     \textbf{Zone of Truth:} Subjects within range cannot lie.
     
   \end{flushleft}
   
   \subsubsection*{Advanced Players Guide}
+  \begin{flushleft}
+    \textbf{Blessing of Courage and Life:} $+2$ on saves vs. fear and death.
+    
+    \textbf{Ghostbane Dirge:} Incorporeal creature takes half damage from nonmagical weapons.
+    
+    \textbf{Grace:} Movement doesn't provoke attacks of opportunity.
+    
+    \textbf{Instant Armor:} Summon armor temporarily replacing your current attire.
+    
+    \textbf{Share Language:} Subject understands chosen language
+    
+    \textbf{Weapon of Awe:} Weapon gets $+2$ on damage rolls.
+    
+  \end{flushleft}
   
+  \clearpage
   \section*{Domains}
   \subsection*{Luck}
   \textbf{Granted Powers:} You are infused with luck, and your
@@ -171,6 +216,7 @@ mere presence can spread good fortune.
   enchantment, 6th-mislead, 7th-spell turning, 8th-moment
   of prescience, 9th-miracle.
   
+  \newpage
   \subsection*{Travel}
   \textbf{Granted Powers:} You are an explorer and find
   enlightenment in the simple joy of travel, be it by foot or
@@ -195,26 +241,8 @@ mere presence can spread good fortune.
   fly, 4th-dimension door, 5th-teleport, 6th-find the path,
   7th-greater teleport, 8th-phase door, 9th-astral projection.
   
+  \clearpage
   \section*{Orisons}
-  \begin{spell}
-    \spellname{example}
-    \luck
-    \cleric
-    \travel
-    \castingtime{\oneround}
-    \castingrange{5 miles}
-    \spellschool{enchantment}
-    \spelltarget{touch}
-    \spellduration{5 years}
-    \verbal
-    \somatic
-    \material{two goats}
-    \divinefocus
-    \focus{old sock}
-    \savingthrow{will}
-    \spelldescription{this is the description of the spell}
-  \end{spell}
-  
   \begin{spell}
     \spellname{Bleed}
     \spellschool{Necromancy}
@@ -414,6 +442,21 @@ mere presence can spread good fortune.
     \spelldescription{With a touch, you infuse a creature with a tiny surge of life, granting the subject 1 temporary hit point.}
   \end{spell}
   
+  \begin{spell}
+    \spellname{Spark}
+    \spellschool{Evocation [fire]}
+    \cleric
+    \castingtime{\oneaction}
+    \verbal\somatic
+    \castingrange{\shortrange}
+    \spelltarget{One Fine object}
+    \spellduration{Instantaneous}
+    \savingthrow{Fortitude negates (object)}
+    \resistyes
+    \spelldescription{You can make an unattended Fine flammable object catch on fire. This works as if you were using flint and steel except that you can use spark in any sort of weather and it takes much less time to actually ignite an object. (Only verbal or somatic component required)}
+  \end{spell}
+  
+  \newpage
   \section*{1st Level}
   
   \begin{spell}
